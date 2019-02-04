@@ -1,0 +1,122 @@
+/*
+ COPY ALL OF THIS CODE INTO THE CUSTOM CSS TAB IN STREAMLABS
+*/
+
+/*Font imports */
+@import url(https://fonts.googleapis.com/css?family=Montserrat);
+@import url(https://fonts.googleapis.com/css?family=Montserrat:800);
+@import url(https://fonts.googleapis.com/css?family=Montserrat:400);
+
+:root {
+    /* Event Text*/
+        --event-color: #00FFCD; 
+        --event-text-transform: capitalize;		/* uppercase | lowercase | capitalize */
+        --event-font-stack: "Montserrat", "Helvetica Neue", "Helvetica", "Arial", "sans-serif";
+        --event-font-size: 12px;
+        --event-font-weight: 800;
+
+    /* Username Text */
+        --username-color: #F84AA7;
+        --username-text-transform: uppercase; /* uppercase | lowercase | capitalize */
+        --username-font-stack: "Montserrat", "Helvetica Neue", "Helvetica", "Arial", "sans-serif";
+        --username-font-size: 16px;
+        --username-font-weight: 400;
+
+    /* Event List Styleing */
+        --events-background-color: #26283B; /* Solid Color Example */
+        /* --events-background-color: -webkit-linear-gradient(top, #cedbe9 0%, #26558b 100%); */ /* Gradient Color Example */
+        --border-top: 2px solid #F84AA7; /* Top border style */
+        --border-right: 0px solid #F84AA7; /* Right border style */
+        --verticalHeight: 45px; /* Vertical Hight of the widget */
+
+    /* Event List Settings */
+        --maxEvents: 10; /* MUST MATCH 'Max Events' in streamlabs settings */
+
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    box-sizing: border-box;
+    letter-spacing: 1px;
+}
+
+.widget-EventList {
+    margin: 0;
+    padding: 0;
+    top: 0;
+    left: 0;
+    width: 1920px;
+    border-top: var(--border-top);
+}
+
+.widget-EventList li {
+    width: calc(1920px / var(--maxEvents));
+    overflow: hidden;
+    float: left;
+    background: var(--events-background-color);
+}
+
+li div {
+    position: relative;
+    height: var(--verticalHeight);
+    width: calc(1920px / var(--maxEvents));
+    float: left;
+    opacity: 0;
+    border-right: var(--border-right);
+    animation: animate-in .5s ease-in .6s forwards;
+}
+
+.event_type {
+    text-align: left;
+    font-size: var(--event-font-size);
+    font-family: var(--event-font-stack);
+    font-weight: var(--event-font-weight);
+    text-transform: var(--text-transform);
+    color: var(--event-color);
+    position: absolute;
+    top: 5px;
+    left: 10px;
+    text-shadow: 2px 2px 3px #000000;
+}
+
+.username {
+    text-align: left;
+    font-size: var(--username-font-size);
+    font-family: var(--username-font-stack);
+    font-weight: var(--username-font-weight);
+    text-transform: var(--text-transform);
+    color: var(--username-color);
+    position: absolute;
+    top: 20px;
+    left: 10px;
+    text-shadow: 2px 2px 3px #000000;
+}
+
+/* 
+Animations
+*/
+
+@keyframes animate-in {
+0% {
+  left: 2px;
+  opacity: 0;
+  text-indent: 0px;
+}
+40% {
+  left: 4px;
+  opacity: 1;
+  text-indent: 0px;
+}
+60% {
+  left: 0px;
+  opacity: 1;
+  text-indent: 10px;
+}
+100% {
+  left: 0px;
+  opacity: 1;
+  text-indent: 0px;
+}
+}
