@@ -2,7 +2,7 @@
 
 This is custom code for a horizontal event list using StreamLabs.
 
-![Horizontal Eventlist Preview][Image_Preview.png]
+![Horizontal Eventlist Preview](Image_Preview.png)
 
 #### How to use:
 1. Copy the code from the HTML file and paste it into the HTML Tab in StreamLabs.
